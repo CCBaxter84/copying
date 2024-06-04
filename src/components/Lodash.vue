@@ -6,14 +6,12 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue'
+import { computed } from 'vue'
+import { useReactive } from '../composables/useReactive'
 import { cloneDeep } from 'lodash'
 import Card from './Card.vue'
 
-const reactiveObject = reactive({
-  id: 1,
-  name: 'reactiveObject'
-})
+const { reactiveObject } = useReactive()
 
 const clonedReactiveObject = computed(() => {
   try {
