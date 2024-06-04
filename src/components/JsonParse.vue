@@ -1,6 +1,7 @@
 <template>
   <card :original-object="reactiveObject"
         :copied-object="copiedReactiveObject"
+        title="JSON.parse & JSON.stringify"
         style="color: blue;"/>
 </template>
 

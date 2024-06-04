@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>JSON.parse & JSON.stringify</h2>
+    <h2>{{ title }}</h2>
     <article>Original: {{ originalObject }}</article>
     <article>Copy: {{ copiedObject }}</article>
     <article>Original === Copy: {{ originalObject === copiedObject }}</article>
@@ -8,5 +8,5 @@
 </template>
 
 <script setup>
-defineProps(["originalObject", "reactiveObject", "copiedObject"])
+defineProps(["title", "originalObject", "reactiveObject", "copiedObject"])
 </script>
