@@ -1,6 +1,6 @@
 <template>
   <section style="margin-bottom: 3rem; color: blue;">
-    <h2 >JSON.parse & JSON.stringify</h2>
+    <h2>JSON.parse & JSON.stringify</h2>
     <card :original-object="reactiveObject"
           :copied-object="copiedReactiveObject"
           title="JSON.parse & JSON.stringify"/>
