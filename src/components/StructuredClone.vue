@@ -2,11 +2,9 @@
   <section style="margin-bottom: 3rem; color: red;">
     <h2>Structured Clone</h2>
     <card :original-object="reactiveObject"
-          :copied-object="clonedReactiveObject"
-          title="JSON.parse & JSON.stringify"/>
+          :copied-object="clonedReactiveObject"/>
     <card :original-object="refObject"
-          :copied-object="copiedRefObject"
-          title="JSON.parse & JSON.stringify"/>
+          :copied-object="clonedRefObject"/>
   </section>
 </template>
 
@@ -24,7 +22,7 @@ const clonedReactiveObject = computed(() => {
     return e
   }
 })
-const copiedRefObject = computed(() => {
+const clonedRefObject = computed(() => {
   try {
     return structuredClone(refObject.value)
   } catch(e) {
