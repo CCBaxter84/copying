@@ -1,8 +1,9 @@
 <template>
   <section style="color: blue;">
     <h2>JSON.parse & JSON.stringify</h2>
-    <article>original: {{ reactiveObject }}</article>
-    <article>copy: {{ copiedReactiveObject }}</article>
+    <article>Original: {{ reactiveObject }}</article>
+    <article>Copy: {{ copiedReactiveObject }}</article>
+    <article>Original === Copy: {{ reactiveObject === copiedReactiveObject }}</article>
   </section>
 </template>
 
