@@ -5,11 +5,15 @@
           :copied-object="clonedReactiveObject"/>
     <card :original-object="refObject"
           :copied-object="clonedRefObject"/>
+    <card :original-object="reactiveObject"
+          :copied-object="clonedRawReactiveObject"/>
+    <card :original-object="refObject"
+          :copied-object="clonedRawRefObject"/>
   </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, toRaw } from 'vue'
 import { useState } from '../composables/useState'
 import Card from './Card.vue'
 
@@ -25,6 +29,22 @@ const clonedReactiveObject = computed(() => {
 const clonedRefObject = computed(() => {
   try {
     return structuredClone(refObject.value)
+  } catch(e) {
+    return e
+  }
+})
+
+const clonedRawReactiveObject = computed(() => {
+  try {
+    return structuredClone(toRaw(reactiveObject))
+  } catch(e) {
+    return e
+  }
+})
+
+const clonedRawRefObject = computed(() => {
+  try {
+    return structuredClone(toRaw(refObject.value))
   } catch(e) {
     return e
   }
