@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 
-export function useReactive() {
+export function useState() {
   const reactiveObject = reactive({
     id: 1,
     name: 'reactiveObject'

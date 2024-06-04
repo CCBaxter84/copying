@@ -7,10 +7,10 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useReactive } from '../composables/useReactive'
+import { useState } from '../composables/useState'
 import Card from './Card.vue'
 
-const { reactiveObject } = useReactive()
+const { reactiveObject } = useState()
 
 const copiedReactiveObject = computed(() => {
   try {
@@ -19,4 +19,4 @@ const copiedReactiveObject = computed(() => {
     return e
   }
 })
-</script>
+</script>../composables/useState

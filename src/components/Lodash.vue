@@ -7,11 +7,11 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useReactive } from '../composables/useReactive'
+import { useState } from '../composables/useState'
 import { cloneDeep } from 'lodash'
 import Card from './Card.vue'
 
-const { reactiveObject } = useReactive()
+const { reactiveObject } = useState()
 
 const clonedReactiveObject = computed(() => {
   try {
@@ -20,4 +20,4 @@ const clonedReactiveObject = computed(() => {
     return e
   }
 })
-</script>
+</script>../composables/useState
