@@ -14,6 +14,11 @@ const reactiveObject = reactive({
   name: 'reactiveObject'
 })
 
-const copiedReactiveObject = computed(
-  () => JSON.parse(JSON.stringify(reactiveObject)))
+const copiedReactiveObject = computed(() => {
+  try {
+    return JSON.parse(JSON.stringify(reactiveObject))
+  } catch(e) {
+    return e
+  }
+})
 </script>
