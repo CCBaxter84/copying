@@ -1,7 +1,7 @@
 <template>
-<card :original-object="reactiveObject"
-      :copied-object="copiedReactiveObject"
-      style="color: blue;"/>
+  <card :original-object="reactiveObject"
+        :copied-object="copiedReactiveObject"
+        style="color: blue;"/>
 </template>
 
 <script setup>
