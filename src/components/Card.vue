@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section style="margin-bottom: 3rem;">
     <h2>{{ title }}</h2>
     <article>Original: {{ originalObject }}</article>
     <article>Copy: {{ copiedObject }}</article>
