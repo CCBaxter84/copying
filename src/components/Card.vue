@@ -7,5 +7,5 @@
 </template>
 
 <script setup>
-defineProps(["originalObject", "reactiveObject", "copiedObject"])
+defineProps(["originalObject", "copiedObject"])
 </script>
