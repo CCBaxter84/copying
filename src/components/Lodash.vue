@@ -5,6 +5,8 @@
           :copied-object="clonedReactiveObject"/>
     <card :original-object="refObject"
           :copied-object="clonedRefObject"/>
+    <circular-reference-card  :circular="circular"
+                              :circular-copy="circularCopy"/>
   </section>
 </template>
 
@@ -13,8 +15,9 @@ import { computed } from 'vue'
 import { useState } from '../composables/useState'
 import { cloneDeep } from 'lodash'
 import Card from './Card.vue'
+import CircularReferenceCard from './CircularReferenceCard.vue'
 
-const { reactiveObject, refObject } = useState()
+const { reactiveObject, refObject, circular } = useState()
 
 const clonedReactiveObject = computed(() => {
   try {
@@ -29,6 +32,13 @@ const clonedRefObject = computed(() => {
     return cloneDeep(refObject.value)
   } catch(e) {
     return e
+  }
+})
+const circularCopy = computed(() => {
+  try {
+    return cloneDeep(circular)
+  } catch(e) {
+    return { value: e }
   }
 })
 </script>
